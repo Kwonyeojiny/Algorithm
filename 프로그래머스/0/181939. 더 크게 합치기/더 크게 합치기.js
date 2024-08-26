@@ -5,4 +5,6 @@ function solution(a, b) {
         return Number(ba);
     else return Number(ab);
 
+    // 이런 코드도 있음
+    //return Math.max(Number(`${a}${b}`), Number(`${b}${a}`))
 }
