@@ -1,12 +1,6 @@
 function solution(numbers, direction) {
-    if(direction === 'right') {
-        const n = numbers.pop()
-        numbers.unshift(n)
-    }
-    else if (direction === 'left'){
-        const n = numbers.shift()
-        numbers.push(n)
-    }
+    if(direction === 'right') numbers.unshift(numbers.pop())
+    else if (direction === 'left') numbers.push(numbers.shift())
     
     return numbers
 }
