@@ -7,10 +7,14 @@ function solution(letter) {
     '-.--':'y','--..':'z'
     }
     
+    // return letter
+    //     .split(' ')
+    //     .map((e)=>morse[e])
+    //     .join('')
+    
     return letter
         .split(' ')
-        .map((e)=>morse[e])
-        .join('')
+        .reduce((prev, curr) => prev + morse[curr], '')
     
     
 }
