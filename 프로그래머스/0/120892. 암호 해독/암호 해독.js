@@ -1,7 +1,7 @@
 function solution(cipher, code) {
-    let arr =[]
+    let arr = ''
     for(let i = code-1;i<cipher.length;i+=code){
-        arr.push(cipher[i])
+        arr+=cipher[i]
     }
-    return arr.join('')
+    return arr
 }
