@@ -1,7 +1,3 @@
 function solution(cipher, code) {
-    let arr = ''
-    for(let i = code-1;i<cipher.length;i+=code){
-        arr+=cipher[i]
-    }
-    return arr
+    return cipher.split('').filter((_, i) => (i + 1) % code === 0).join('')
 }
