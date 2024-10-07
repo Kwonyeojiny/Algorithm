@@ -3,7 +3,11 @@ function solution(numbers) {
                   "six", "seven", "eight", "nine"]
     
     nums.forEach((num, index)=>{
-        numbers = numbers.split(num).join(index)
+        // split().join()
+        //numbers = numbers.split(num).join(index)
+        
+        // replaceAll
+        numbers = numbers.replaceAll(num,index)
     })
     
     return Number(numbers)
