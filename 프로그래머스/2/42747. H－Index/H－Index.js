@@ -1,10 +1,11 @@
 function solution(citations) {
-    const arr = citations.sort((a,b)=>b-a)
-    let answer = 0
+    const arr = citations.sort((a,b)=>b-a);
+    let answer = 0;
     
     for(let i = 0; i<arr.length;i++){
-        if(arr[i]>i)answer++
+        if(arr[i]>i) answer++;
+        else break;
     }
-    return answer
+    return answer;
     
 }
