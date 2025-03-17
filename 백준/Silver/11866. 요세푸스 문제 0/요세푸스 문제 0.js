@@ -4,15 +4,13 @@ const input = fs
   .toString()
   .trim()
   .split(" ")
-  .map(Number);
 
-const [N, K] = input;
-const queue = Array.from({ length: N }, (_, i) => i + 1);
+const queue = Array.from({ length: Number(input[0]) }, (_, i) => i + 1);
 const result = [];
 
 let index = 0;
 while (queue.length) {
-  index = (index + K - 1) % queue.length;
+  index = (index + Number(input[1]) - 1) % queue.length;
   result.push(queue.splice(index, 1)[0]);
 }
 
