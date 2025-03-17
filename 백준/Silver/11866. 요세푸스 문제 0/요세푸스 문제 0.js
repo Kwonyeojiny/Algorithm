@@ -1,14 +1,19 @@
 const fs = require("fs");
-const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
+const input = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split(" ")
+  .map(Number);
 
-const arr = Array.from({ length: input[0] }, (_, i) => i + 1);
-const out = [];
+const [N, K] = input;
+const queue = Array.from({ length: N }, (_, i) => i + 1);
+const result = [];
 
-while (arr.length) {
-  for (let i = 0; i < input[1]; i++) {
-    arr.push(arr.shift());
-  }
-  out.push(arr.pop());
+let index = 0;
+while (queue.length) {
+  index = (index + K - 1) % queue.length;
+  result.push(queue.splice(index, 1)[0]);
 }
 
-console.log(`<${out.join(", ")}>`);
+console.log(`<${result.join(", ")}>`);
