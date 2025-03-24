@@ -6,7 +6,7 @@ const [T, ...arr] = input;
 let dp = [1, 1, 1];
 
 for (let i = 3; i < 100; i++) {
-  dp.push(dp[i - 2] + dp[i - 3]);
+  dp[i] = dp[i - 2] + dp[i - 3];
 }
 
 for (let i = 0; i < T; i++) {
