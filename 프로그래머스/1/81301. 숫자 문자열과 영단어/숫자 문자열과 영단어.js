@@ -4,11 +4,13 @@ function solution(s) {
     'five', 'six', 'seven', 'eight', 'nine'
     ];
     
-    for(let i = 0; i< 10; i++){
-        const re = new RegExp(words[i], 'g');
-        s = s.replace(re, String(i));
+    let answer = s;
+
+    for(let i = 0; i < words.length; i++) {
+        let arr = answer.split(words[i]);
+        answer = arr.join(i);
     }
-    
-    return Number(s);
+
+    return Number(answer);
 }
 
